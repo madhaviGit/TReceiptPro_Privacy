@@ -2,22 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TReceipt Pro - Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        h2 { color: #007b83; }
+        h3 { color: #005f66; margin-top: 24px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; }
+        p { margin: 8px 0; }
+        .note {
+            background: #f0fafa;
+            border-left: 4px solid #007b83;
+            padding: 10px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
 <h2>Privacy Policy</h2>
-
 <p>This privacy policy applies to the <strong>TReceipt Pro</strong> app ("Application"), developed by Madhavi Gullipalli ("Service Provider").</p>
+<p><strong>Effective Date:</strong> 2026-04-10</p>
 
 <h3>Information Collection</h3>
 <p>The Application may collect the following information:</p>
 <ul>
     <li>Device information (e.g. operating system, device type)</li>
     <li>Usage data (e.g. app interactions, time spent)</li>
-    <li>IP address</li>
+    <li>IP address (may be collected indirectly by Firebase services for security and analytics purposes)</li>
     <li>Name and email (via Google Sign-In, if used)</li>
+    <li>Receipt images and data that you choose to scan or upload</li>
 </ul>
+
+<h3>Device Permissions</h3>
+<p>The Application requests the following device permissions to provide core functionality:</p>
+<ul>
+    <li><strong>Camera:</strong> Used to scan and photograph receipts directly within the app.</li>
+    <li><strong>Photo Library / Gallery:</strong> Used to allow you to select existing receipt images from your device.</li>
+    <li><strong>Storage:</strong> Used to save exported Excel files to your device. Receipt data is stored securely in the cloud (Firebase) and is not stored locally on your device.</li>
+</ul>
+<p>These permissions are used solely to provide the receipt management features of the Application. Receipt images are transmitted to Google Gemini AI for automated data extraction. No other images or files are shared with third parties without your explicit action.</p>
 
 <h3>Use of Data</h3>
 <p>Data is used to:</p>
@@ -25,40 +58,58 @@
     <li>Provide and improve the Application</li>
     <li>Monitor performance and fix issues</li>
     <li>Authenticate users</li>
+    <li>Process and display your scanned receipts</li>
+</ul>
+
+<h3>In-App Purchases</h3>
+<p>TReceipt Pro uses a pay-as-you-go model via In-App Purchases. Users purchase scan packs (a fixed number of receipt scans) as one-time in-app purchases through the Google Play Store (Android) or Apple App Store (iOS).</p>
+<ul>
+    <li>The Service Provider does not collect, process, or store any payment or billing information.</li>
+    <li>All purchases are handled by Google Play Billing or Apple In-App Purchases.</li>
+    <li>Scan credits are non-refundable once used.</li>
+    <li>Payment details are governed by Google's and Apple's respective privacy policies.</li>
 </ul>
 
 <h3>Third-Party Services</h3>
-<p>The Application uses Google services, including:</p>
+<p>The Application uses the following third-party services, which may collect and process data according to their own privacy policies:</p>
 <ul>
     <li>Google Play Services</li>
-    <li>Firebase (Analytics, Crash Reporting, Authentication)</li>
+    <li>Firebase Analytics</li>
+    <li>Firebase Crashlytics (crash reporting)</li>
+    <li>Firebase Authentication</li>
     <li>Google Sign-In</li>
+    <li>Google Gemini AI (receipt content processing)</li>
 </ul>
-<p>These services may collect and process data according to their own privacy policies.</p>
+
+<h3>AI Processing</h3>
+<p>Receipt images and data are processed by Google Gemini AI to extract information such as merchant name, date, total amount, and line items. Images sent to Gemini are used solely for extraction purposes and are not stored or used for AI training by the Service Provider. Processing is subject to Google's Gemini API Terms and Privacy Policy.</p>
+
+<h3>Crash Reporting</h3>
+<p>The Application uses Firebase Crashlytics to automatically collect crash reports. These reports may include device state, app version, and stack traces at the time of a crash. No personally identifiable information is intentionally included in crash reports. This data is used solely to identify and fix bugs.</p>
 
 <h3>Data Retention</h3>
-<p>Data is retained while you use the Application and for up to 30 days after.</p>
+<p>Data is retained while you use the Application and for up to 30 days after account deletion or app uninstallation, unless a longer retention period is required by law.</p>
 
 <h3>Your Rights</h3>
-<p>You may request access, correction, or deletion of your data by contacting the Service Provider.</p>
+<p>You may request access, correction, or deletion of your data by contacting the Service Provider at the email below.</p>
 
 <h3>Security</h3>
-<p>Reasonable measures are taken to protect your data.</p>
+<p>Reasonable technical and organizational measures are taken to protect your data from unauthorized access, loss, or misuse.</p>
 
-<h3>Children’s Privacy</h3>
-<p>The Application is not intended for children under 18.</p>
+<h3>Children's Privacy</h3>
+<p>The Application is not intended for children under the age of 13. The Service Provider does not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us and it will be deleted promptly.</p>
 
 <h3>Account Deletion</h3>
-<p>If you would like to delete your account and associated data, please contact the Service Provider at:</p>
+<p>If you would like to delete your account and all associated data, please contact the Service Provider at:</p>
 <p><strong>Email:</strong> projects.madhavi@gmail.com</p>
-<p>Your request will be processed within a reasonable timeframe. All associated personal data will be deleted unless retention is required by law.</p>    
+<p>Your request will be processed within a reasonable timeframe. All associated personal data will be deleted unless retention is required by law.</p>
+
+<h3>Changes to This Policy</h3>
+<p>This privacy policy may be updated from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the Application after changes constitutes acceptance of the updated policy.</p>
 
 <h3>Contact</h3>
-<p>If you have any questions, contact:<br>
-projects.madhavi@gmail.com</p>
-
-<p><strong>Effective Date:</strong> 2026-04-10</p>
+<p>If you have any questions about this privacy policy, please contact:<br>
+<strong>Email:</strong> projects.madhavi@gmail.com</p>
 
 </body>
 </html>
-      
