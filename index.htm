@@ -78,11 +78,38 @@
     <li>Firebase Crashlytics (crash reporting)</li>
     <li>Firebase Authentication</li>
     <li>Google Sign-In</li>
-    <li>Google Gemini AI (receipt content processing)</li>
+    <li>Google Gemini AI (receipt and bank statement content processing)</li>
+    <li>VirusTotal (malware scanning of uploaded files — see Bank Statement Import section)</li>
 </ul>
 
 <h3>AI Processing</h3>
 <p>Receipt images and data are processed by Google Gemini AI to extract information such as merchant name, date, total amount, and line items. Images sent to Gemini are used solely for extraction purposes and are not stored or used for AI training by the Service Provider. Processing is subject to Google's Gemini API Terms and Privacy Policy.</p>
+
+<h3>Bank Statement Import</h3>
+<p>When you use the bank statement import feature, we process the PDF or CSV file you select. From that file we extract:</p>
+<ul>
+    <li>Transaction date</li>
+    <li>Merchant / payee name</li>
+    <li>Raw transaction description</li>
+    <li>Amount and currency</li>
+    <li>Inferred expense category</li>
+</ul>
+<p>Before any data is sent for AI extraction, sensitive values such as Social Security Numbers and labelled account numbers are automatically masked.</p>
+
+<p><strong>How it is processed:</strong></p>
+<ol>
+    <li>Your file is uploaded to Firebase Storage under a path scoped to your user account (<code>bankStatements/{yourUserId}/</code>).</li>
+    <li>The file is scanned for malware using VirusTotal. On the free tier, uploaded files are analysed on the public VirusTotal platform. Files that fail the scan are rejected and deleted immediately.</li>
+    <li>A backend Cloud Function reads the file, strips embedded metadata, masks sensitive identifiers, and sends the sanitised text to Google Gemini for transaction extraction.</li>
+    <li>Extracted transactions are written to your private Firestore document (<code>users/{yourUserId}/bankStatements/{importId}</code>).</li>
+    <li>You can review, edit, and selectively save them to your expense records.</li>
+</ol>
+
+<p><strong>File retention:</strong> The original uploaded file (PDF/CSV) is deleted automatically as soon as processing completes — whether it succeeds, fails, or is rejected by the virus scan. A storage lifecycle rule enforces a hard maximum retention of 24 hours in the event of an unexpected server failure.</p>
+
+<p><strong>Extracted data retention:</strong> Structured transaction data saved to your account is retained until you delete it from within the app or request account deletion.</p>
+
+<p><strong>Data deletion:</strong> You can delete individual transactions from the app. To delete all imported bank statement data or your account, contact us at <a href="mailto:projects.madhavi@gmail.com">projects.madhavi@gmail.com</a> or use the account deletion option in Settings.</p>
 
 <h3>Crash Reporting</h3>
 <p>The Application uses Firebase Crashlytics to automatically collect crash reports. These reports may include device state, app version, and stack traces at the time of a crash. No personally identifiable information is intentionally included in crash reports. This data is used solely to identify and fix bugs.</p>
@@ -113,3 +140,4 @@
 
 </body>
 </html>
+
