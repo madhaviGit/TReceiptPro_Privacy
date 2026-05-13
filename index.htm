@@ -79,7 +79,6 @@
     <li>Firebase Authentication</li>
     <li>Google Sign-In</li>
     <li>Google Gemini AI (receipt and bank statement content processing)</li>
-    <li>VirusTotal (malware scanning of uploaded files — see Bank Statement Import section)</li>
 </ul>
 
 <h3>AI Processing</h3>
@@ -99,13 +98,12 @@
 <p><strong>How it is processed:</strong></p>
 <ol>
     <li>Your file is uploaded to Firebase Storage under a path scoped to your user account (<code>bankStatements/{yourUserId}/</code>).</li>
-    <li>The file is scanned for malware using VirusTotal. On the free tier, uploaded files are analysed on the public VirusTotal platform. Files that fail the scan are rejected and deleted immediately.</li>
     <li>A backend Cloud Function reads the file, strips embedded metadata, masks sensitive identifiers, and sends the sanitised text to Google Gemini for transaction extraction.</li>
     <li>Extracted transactions are written to your private Firestore document (<code>users/{yourUserId}/bankStatements/{importId}</code>).</li>
     <li>You can review, edit, and selectively save them to your expense records.</li>
 </ol>
 
-<p><strong>File retention:</strong> The original uploaded file (PDF/CSV) is deleted automatically as soon as processing completes — whether it succeeds, fails, or is rejected by the virus scan. A storage lifecycle rule enforces a hard maximum retention of 24 hours in the event of an unexpected server failure.</p>
+<p><strong>File retention:</strong> The original uploaded file (PDF/CSV) is deleted automatically as soon as processing completes — whether it succeeds, fails. A storage lifecycle rule enforces a hard maximum retention of 24 hours in the event of an unexpected server failure.</p>
 
 <p><strong>Extracted data retention:</strong> Structured transaction data saved to your account is retained until you delete it from within the app or request account deletion.</p>
 
