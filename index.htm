@@ -1,141 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TReceipt Pro - Privacy Policy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #333;
-            line-height: 1.6;
-        }
-        h2 { color: #1A1A1A; }
-        h3 { color: #1A1A1A; margin-top: 24px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 6px; }
-        p { margin: 8px 0; }
-        .note {
-            background: #f0fafa;
-            border-left: 4px solid #007b83;
-            padding: 10px 16px;
-            margin: 16px 0;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – TReceipt Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --brand:       #002244;
+      --brand-light: #e8eef8;
+      --accent:      #B5CCF1;
+      --accent-text: #003082;
+      --text:        #1A1A1A;
+      --muted:       #9E9E9E;
+      --secondary:   #666666;
+      --border:      #E0E0E0;
+      --bg:          #F5F5F5;
+      --card:        #FFFFFF;
+      --radius:      12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--brand);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .app-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    header .subtitle {
+      font-size: 14px;
+      opacity: 0.75;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    header .effective {
+      margin-top: 14px;
+      font-size: 13px;
+      opacity: 0.65;
+    }
+
+    /* ── Language Toggle ── */
+    .lang-bar {
+      background: var(--brand-light);
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .lang-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 999px;
+      border: 1.5px solid var(--brand);
+      background: transparent;
+      color: var(--brand);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── Section card ── */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--brand);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .icon {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 10px; color: var(--secondary); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 0;
+      list-style: none;
+      margin: 10px 0;
+    }
+    ul li, ol li {
+      display: flex;
+      gap: 10px;
+      padding: 5px 0;
+      font-size: 15px;
+      color: var(--secondary);
+    }
+    ul li::before {
+      content: '•';
+      color: var(--accent-text);
+      font-size: 18px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+    ol { counter-reset: steps; }
+    ol li { counter-increment: steps; }
+    ol li::before {
+      content: counter(steps);
+      background: var(--brand);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .retention-block {
+      background: var(--brand-light);
+      border-left: 3px solid var(--accent-text);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+    .retention-block + .retention-block { margin-top: 8px; }
+    .retention-block strong { color: var(--brand); }
+
+    .highlight-note {
+      background: #EEF3FC;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      margin-top: 12px;
+      color: var(--accent-text);
+    }
+
+    a { color: var(--accent-text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .email-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-light);
+      color: var(--accent-text);
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* hide/show lang */
+    [data-lang] { display: none; }
+    body.en [data-lang="en"] { display: block; }
+    body.de [data-lang="de"] { display: block; }
+    /* inline spans */
+    span[data-lang] { display: none; }
+    body.en span[data-lang="en"] { display: inline; }
+    body.de span[data-lang="de"] { display: inline; }
+
+    @media (max-width: 520px) {
+      .section { padding: 20px 18px; }
+      h2 { font-size: 17px; }
+    }
+  </style>
 </head>
-<body>
+<body class="en">
 
-<h2>Privacy Policy</h2>
-<p>This privacy policy applies to the <strong>TReceipt Pro</strong> app ("Application"), developed by Madhavi Gullipalli ("Service Provider").</p>
-<p><strong>Effective Date:</strong> 2026-04-10</p>
+<header>
+  <div class="app-name">TReceipt Pro</div>
+  <div class="subtitle"><span data-lang="en">Privacy Policy</span><span data-lang="de">Datenschutzerklärung</span></div>
+  <div class="effective"><span data-lang="en">Effective Date: April 10, 2026</span><span data-lang="de">Gültig ab: 10. April 2026</span></div>
+</header>
 
-<h3>Information Collection</h3>
-<p>The Application may collect the following information:</p>
-<ul>
-    <li>Device information (e.g. operating system, device type)</li>
-    <li>Usage data (e.g. app interactions, time spent)</li>
-    <li>IP address (may be collected indirectly by Firebase services for security and analytics purposes)</li>
-    <li>Name and email (via Google Sign-In, if used)</li>
-    <li>Receipt images and data that you choose to scan or upload</li>
-</ul>
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</button>
+</div>
 
-<h3>Device Permissions</h3>
-<p>The Application requests the following device permissions to provide core functionality:</p>
-<ul>
-    <li><strong>Camera:</strong> Used to scan and photograph receipts directly within the app.</li>
-    <li><strong>Photo Library / Gallery:</strong> Used to allow you to select existing receipt images from your device.</li>
-    <li><strong>Storage:</strong> Used to save exported Excel files to your device. Receipt data is stored securely in the cloud (Firebase) and is not stored locally on your device.</li>
-</ul>
-<p>These permissions are used solely to provide the receipt management features of the Application. Receipt images are transmitted to Google Gemini AI for automated data extraction. No other images or files are shared with third parties without your explicit action.</p>
+<main>
 
-<h3>Use of Data</h3>
-<p>Data is used to:</p>
-<ul>
-    <li>Provide and improve the Application</li>
-    <li>Monitor performance and fix issues</li>
-    <li>Authenticate users</li>
-    <li>Process and display your scanned receipts</li>
-</ul>
+  <!-- Intro -->
+  <div class="section">
+    <div data-lang="en">
+      <p>This privacy policy applies to the <strong>TReceipt Pro</strong> app ("Application"), developed by <strong>Madhavi Gullipalli</strong> ("Service Provider").</p>
+    </div>
+    <div data-lang="de">
+      <p>Diese Datenschutzerklärung gilt für die <strong>TReceipt Pro</strong> App („Anwendung"), entwickelt von <strong>Madhavi Gullipalli</strong> („Anbieter").</p>
+    </div>
+  </div>
 
-<h3>In-App Purchases</h3>
-<p>TReceipt Pro uses a pay-as-you-go model via In-App Purchases. Users purchase scan packs (a fixed number of receipt scans) as one-time in-app purchases through the Google Play Store (Android) or Apple App Store (iOS).</p>
-<ul>
-    <li>The Service Provider does not collect, process, or store any payment or billing information.</li>
-    <li>All purchases are handled by Google Play Billing or Apple In-App Purchases.</li>
-    <li>Scan credits are non-refundable once used.</li>
-    <li>Payment details are governed by Google's and Apple's respective privacy policies.</li>
-</ul>
+  <!-- Information Collection -->
+  <div class="section">
+    <h2><span class="icon">📋</span><span data-lang="en">Information Collection</span><span data-lang="de">Datenerhebung</span></h2>
+    <div data-lang="en">
+      <p>The Application may collect the following information:</p>
+      <ul>
+        <li>Device information (e.g. operating system, device type)</li>
+        <li>Usage data (e.g. app interactions, time spent)</li>
+        <li>IP address (may be collected indirectly by Firebase services for security and analytics purposes)</li>
+        <li>Name and email (via Google Sign-In, if used)</li>
+        <li>Receipt images and data that you choose to scan or upload</li>
+      </ul>
+    </div>
+    <div data-lang="de">
+      <p>Die Anwendung kann folgende Informationen erfassen:</p>
+      <ul>
+        <li>Geräteinformationen (z. B. Betriebssystem, Gerätetyp)</li>
+        <li>Nutzungsdaten (z. B. App-Interaktionen, Nutzungsdauer)</li>
+        <li>IP-Adresse (kann indirekt durch Firebase-Dienste für Sicherheits- und Analysezwecke erfasst werden)</li>
+        <li>Name und E-Mail-Adresse (über Google Sign-In, falls verwendet)</li>
+        <li>Belegbilder und -daten, die Sie scannen oder hochladen möchten</li>
+      </ul>
+    </div>
+  </div>
 
-<h3>Third-Party Services</h3>
-<p>The Application uses the following third-party services, which may collect and process data according to their own privacy policies:</p>
-<ul>
-    <li>Google Play Services</li>
-    <li>Firebase Analytics</li>
-    <li>Firebase Crashlytics (crash reporting)</li>
-    <li>Firebase Authentication</li>
-    <li>Google Sign-In</li>
-    <li>Google Gemini AI (receipt and bank statement content processing)</li>
-</ul>
+  <!-- Device Permissions -->
+  <div class="section">
+    <h2><span class="icon">🔑</span><span data-lang="en">Device Permissions</span><span data-lang="de">Geräteberechtigungen</span></h2>
+    <div data-lang="en">
+      <p>The Application requests the following device permissions to provide core functionality:</p>
+      <ul>
+        <li><strong>Camera:</strong> Used to scan and photograph receipts directly within the app.</li>
+        <li><strong>Photo Library / Gallery:</strong> Used to allow you to select existing receipt images from your device.</li>
+        <li><strong>Storage:</strong> Used to save exported Excel files to your device. Receipt data is stored securely in the cloud (Firebase) and is not stored locally on your device.</li>
+      </ul>
+      <p style="margin-top:12px;">These permissions are used solely to provide the receipt management features of the Application. Receipt images are transmitted to Google Gemini AI for automated data extraction. No other images or files are shared with third parties without your explicit action.</p>
+    </div>
+    <div data-lang="de">
+      <p>Die Anwendung fordert folgende Geräteberechtigungen an, um die Kernfunktionen bereitzustellen:</p>
+      <ul>
+        <li><strong>Kamera:</strong> Wird verwendet, um Belege direkt in der App zu scannen und zu fotografieren.</li>
+        <li><strong>Fotomediathek / Galerie:</strong> Ermöglicht die Auswahl vorhandener Belegbilder von Ihrem Gerät.</li>
+        <li><strong>Speicher:</strong> Wird zum Speichern exportierter Excel-Dateien auf Ihrem Gerät verwendet. Belegdaten werden sicher in der Cloud (Firebase) gespeichert und nicht lokal auf Ihrem Gerät.</li>
+      </ul>
+      <p style="margin-top:12px;">Diese Berechtigungen dienen ausschließlich der Bereitstellung der Belegverwaltungsfunktionen der Anwendung. Belegbilder werden zur automatisierten Datenextraktion an Google Gemini AI übertragen. Keine weiteren Bilder oder Dateien werden ohne Ihre ausdrückliche Aktion an Dritte weitergegeben.</p>
+    </div>
+  </div>
 
-<h3>AI Processing</h3>
-<p>Receipt images and data are processed by Google Gemini AI to extract information such as merchant name, date, total amount, and line items. Images sent to Gemini are used solely for extraction purposes and are not stored or used for AI training by the Service Provider. Processing is subject to Google's Gemini API Terms and Privacy Policy.</p>
+  <!-- Use of Data -->
+  <div class="section">
+    <h2><span class="icon">⚙️</span><span data-lang="en">Use of Data</span><span data-lang="de">Datenverwendung</span></h2>
+    <div data-lang="en">
+      <p>Data is used to:</p>
+      <ul>
+        <li>Provide and improve the Application</li>
+        <li>Monitor performance and fix issues</li>
+        <li>Authenticate users</li>
+        <li>Process and display your scanned receipts</li>
+      </ul>
+    </div>
+    <div data-lang="de">
+      <p>Daten werden verwendet, um:</p>
+      <ul>
+        <li>Die Anwendung bereitzustellen und zu verbessern</li>
+        <li>Leistung zu überwachen und Probleme zu beheben</li>
+        <li>Benutzer zu authentifizieren</li>
+        <li>Ihre gescannten Belege zu verarbeiten und anzuzeigen</li>
+      </ul>
+    </div>
+  </div>
 
-<h3>Bank Statement Import</h3>
-<p>When you use the bank statement import feature, we process the PDF or CSV file you select. From that file we extract:</p>
-<ul>
-    <li>Transaction date</li>
-    <li>Merchant / payee name</li>
-    <li>Raw transaction description</li>
-    <li>Amount and currency</li>
-    <li>Inferred expense category</li>
-</ul>
-<p>Before any data is sent for AI extraction, sensitive values such as Social Security Numbers and labelled account numbers are automatically masked.</p>
+  <!-- In-App Purchases -->
+  <div class="section">
+    <h2><span class="icon">🛒</span><span data-lang="en">In-App Purchases</span><span data-lang="de">In-App-Käufe</span></h2>
+    <div data-lang="en">
+      <p>TReceipt Pro uses a pay-as-you-go model via In-App Purchases. Users purchase scan packs (a fixed number of receipt scans) as one-time in-app purchases through the Google Play Store (Android) or Apple App Store (iOS).</p>
+      <ul>
+        <li>The Service Provider does not collect, process, or store any payment or billing information.</li>
+        <li>All purchases are handled by Google Play Billing or Apple In-App Purchases.</li>
+        <li>Scan credits are non-refundable once used.</li>
+        <li>Payment details are governed by Google's and Apple's respective privacy policies.</li>
+      </ul>
+    </div>
+    <div data-lang="de">
+      <p>TReceipt Pro verwendet ein Pay-as-you-go-Modell über In-App-Käufe. Benutzer erwerben Scan-Pakete (eine festgelegte Anzahl von Belegscans) als einmalige In-App-Käufe über den Google Play Store (Android) oder den Apple App Store (iOS).</p>
+      <ul>
+        <li>Der Anbieter erhebt, verarbeitet oder speichert keine Zahlungs- oder Abrechnungsinformationen.</li>
+        <li>Alle Käufe werden über Google Play Billing oder Apple In-App Purchases abgewickelt.</li>
+        <li>Scan-Credits sind nach Verwendung nicht erstattungsfähig.</li>
+        <li>Zahlungsdetails unterliegen den jeweiligen Datenschutzrichtlinien von Google und Apple.</li>
+      </ul>
+    </div>
+  </div>
 
-<p><strong>How it is processed:</strong></p>
-<ol>
-    <li>Your file is uploaded to Firebase Storage under a path scoped to your user account (<code>bankStatements/{yourUserId}/</code>).</li>
-    <li>A backend Cloud Function reads the file, strips embedded metadata, masks sensitive identifiers, and sends the sanitised text to Google Gemini for transaction extraction.</li>
-    <li>Extracted transactions are written to your private Firestore document (<code>users/{yourUserId}/bankStatements/{importId}</code>).</li>
-    <li>You can review, edit, and selectively save them to your expense records.</li>
-</ol>
+  <!-- Third-Party Services -->
+  <div class="section">
+    <h2><span class="icon">🔗</span><span data-lang="en">Third-Party Services</span><span data-lang="de">Drittanbieterdienste</span></h2>
+    <div data-lang="en">
+      <p>The Application uses the following third-party services, which may collect and process data according to their own privacy policies:</p>
+      <ul>
+        <li>Google Play Services</li>
+        <li>Firebase Analytics (app usage and performance monitoring)</li>
+        <li>Firebase Crashlytics (crash reporting)</li>
+        <li>Firebase Authentication (including Google Sign-In)</li>
+        <li>Firebase Firestore (cloud data storage)</li>
+        <li>Firebase Storage (receipt image storage for in-app display, and temporary file storage for bank statement processing)</li>
+        <li>Firebase Cloud Functions (server-side data processing)</li>
+        <li>Google Gemini AI (receipt and bank statement content processing)</li>
+      </ul>
+    </div>
+    <div data-lang="de">
+      <p>Die Anwendung nutzt folgende Drittanbieterdienste, die gemäß ihren eigenen Datenschutzrichtlinien Daten erheben und verarbeiten können:</p>
+      <ul>
+        <li>Google Play Services</li>
+        <li>Firebase Analytics (App-Nutzungs- und Leistungsüberwachung)</li>
+        <li>Firebase Crashlytics (Absturzberichte)</li>
+        <li>Firebase Authentication (einschließlich Google Sign-In)</li>
+        <li>Firebase Firestore (Cloud-Datenspeicherung)</li>
+        <li>Firebase Storage (Speicherung von Belegbildern zur In-App-Anzeige sowie temporäre Dateispeicherung für den Kontoauszugsimport)</li>
+        <li>Firebase Cloud Functions (serverseitige Datenverarbeitung)</li>
+        <li>Google Gemini AI (Verarbeitung von Beleginhalten und Kontoauszügen)</li>
+      </ul>
+    </div>
+  </div>
 
-<p><strong>File retention:</strong> The original uploaded file (PDF/CSV) is deleted automatically as soon as processing completes — whether it succeeds, fails. A storage lifecycle rule enforces a hard maximum retention of 24 hours in the event of an unexpected server failure.</p>
+  <!-- AI Processing -->
+  <div class="section">
+    <h2><span class="icon">🤖</span><span data-lang="en">AI Processing</span><span data-lang="de">KI-Verarbeitung</span></h2>
+    <div data-lang="en">
+      <p>Receipt images and data are processed by Google Gemini AI to extract information such as merchant name, date, total amount, and line items. Images sent to Gemini are used solely for extraction purposes and are not used for AI training by the Service Provider. After extraction, receipt images are stored in Firebase Storage linked to your account so they can be displayed within the app. Processing is subject to Google's Gemini API Terms and Privacy Policy.</p>
+    </div>
+    <div data-lang="de">
+      <p>Belegbilder und -daten werden von Google Gemini AI verarbeitet, um Informationen wie Händlername, Datum, Gesamtbetrag und Einzelpositionen zu extrahieren. An Gemini gesendete Bilder werden ausschließlich für Extraktionszwecke verwendet und nicht vom Anbieter für das KI-Training genutzt. Nach der Extraktion werden Belegbilder in Firebase Storage gespeichert und mit Ihrem Konto verknüpft, damit sie in der App angezeigt werden können. Die Verarbeitung unterliegt den Gemini API-Nutzungsbedingungen und der Datenschutzrichtlinie von Google.</p>
+    </div>
+  </div>
 
-<p><strong>Extracted data retention:</strong> Structured transaction data saved to your account is retained until you delete it from within the app or request account deletion.</p>
+  <!-- Bank Statement Import -->
+  <div class="section">
+    <h2><span class="icon">🏦</span><span data-lang="en">Bank Statement Import</span><span data-lang="de">Kontoauszugsimport</span></h2>
+    <div data-lang="en">
+      <p>When you use the bank statement import feature, we process the PDF or CSV file you select. From that file we extract:</p>
+      <ul>
+        <li>Transaction date</li>
+        <li>Merchant / payee name</li>
+        <li>Raw transaction description</li>
+        <li>Amount and currency</li>
+        <li>Inferred expense category</li>
+      </ul>
+      <div class="highlight-note">
+        Before any data is sent for AI extraction, sensitive values such as Social Security Numbers and labelled account numbers are automatically masked.
+      </div>
+      <p style="margin-top:16px;font-weight:600;">How it is processed:</p>
+      <ol>
+        <li>Your file is uploaded to Firebase Storage scoped to your user account.</li>
+        <li>A backend Cloud Function is triggered automatically to begin processing.</li>
+        <li>The Cloud Function reads the file, strips embedded metadata, masks sensitive identifiers, and sends the sanitised text to Google Gemini for transaction extraction.</li>
+        <li>Extracted transactions are written to your private account document in our database.</li>
+        <li>You can review, edit, and selectively save them to your expense records.</li>
+      </ol>
+      <div class="retention-block"><strong>File retention:</strong> The original uploaded file (PDF/CSV) is deleted immediately once processing completes — whether it succeeds or fails. A hard maximum retention of 24 hours applies in the event of an unexpected server failure.</div>
+      <div class="retention-block"><strong>Extracted data retention:</strong> Structured transaction data saved to your account is retained until you delete it from within the app or request account deletion.</div>
+      <div class="retention-block"><strong>Data deletion:</strong> You can delete individual transactions from the app. To delete all imported bank statement data or your account, contact us at <a href="mailto:projects.madhavi@gmail.com">projects.madhavi@gmail.com</a> or use the account deletion option in Settings.</div>
+    </div>
+    <div data-lang="de">
+      <p>Wenn Sie die Funktion zum Importieren von Kontoauszügen verwenden, verarbeiten wir die von Ihnen ausgewählte PDF- oder CSV-Datei. Aus dieser Datei extrahieren wir:</p>
+      <ul>
+        <li>Buchungsdatum</li>
+        <li>Händler- / Zahlungsempfängername</li>
+        <li>Rohe Transaktionsbeschreibung</li>
+        <li>Betrag und Währung</li>
+        <li>Abgeleitete Ausgabenkategorie</li>
+      </ul>
+      <div class="highlight-note">
+        Bevor Daten zur KI-Extraktion gesendet werden, werden sensible Werte wie Sozialversicherungsnummern und gekennzeichnete Kontonummern automatisch maskiert.
+      </div>
+      <p style="margin-top:16px;font-weight:600;">Verarbeitungsablauf:</p>
+      <ol>
+        <li>Ihre Datei wird in Firebase Storage auf Ihr Benutzerkonto beschränkt hochgeladen.</li>
+        <li>Eine Backend-Cloud-Funktion wird automatisch ausgelöst, um die Verarbeitung zu starten.</li>
+        <li>Die Cloud-Funktion liest die Datei, entfernt eingebettete Metadaten, maskiert sensible Kennungen und sendet den bereinigten Text zur Transaktionsextraktion an Google Gemini.</li>
+        <li>Extrahierte Transaktionen werden in Ihr privates Konto-Dokument in unserer Datenbank geschrieben.</li>
+        <li>Sie können diese überprüfen, bearbeiten und selektiv in Ihre Ausgabenaufzeichnungen speichern.</li>
+      </ol>
+      <div class="retention-block"><strong>Dateiaufbewahrung:</strong> Die ursprünglich hochgeladene Datei (PDF/CSV) wird sofort gelöscht, sobald die Verarbeitung abgeschlossen ist – unabhängig davon, ob sie erfolgreich war oder nicht. Eine maximale Aufbewahrungsdauer von 24 Stunden gilt im Falle eines unerwarteten Serverfehlers.</div>
+      <div class="retention-block"><strong>Aufbewahrung extrahierter Daten:</strong> Strukturierte Transaktionsdaten, die in Ihrem Konto gespeichert wurden, werden aufbewahrt, bis Sie diese in der App löschen oder die Kontolöschung beantragen.</div>
+      <div class="retention-block"><strong>Datenlöschung:</strong> Sie können einzelne Transaktionen in der App löschen. Um alle importierten Kontoauszugsdaten oder Ihr Konto zu löschen, kontaktieren Sie uns unter <a href="mailto:projects.madhavi@gmail.com">projects.madhavi@gmail.com</a> oder verwenden Sie die Option zur Kontolöschung in den Einstellungen.</div>
+    </div>
+  </div>
 
-<p><strong>Data deletion:</strong> You can delete individual transactions from the app. To delete all imported bank statement data or your account, contact us at <a href="mailto:projects.madhavi@gmail.com">projects.madhavi@gmail.com</a> or use the account deletion option in Settings.</p>
+  <!-- Crash Reporting -->
+  <div class="section">
+    <h2><span class="icon">🛡️</span><span data-lang="en">Crash Reporting</span><span data-lang="de">Absturzberichte</span></h2>
+    <div data-lang="en">
+      <p>The Application uses Firebase Crashlytics to automatically collect crash reports. These reports may include device state, app version, and stack traces at the time of a crash. No personally identifiable information is intentionally included in crash reports. This data is used solely to identify and fix bugs.</p>
+    </div>
+    <div data-lang="de">
+      <p>Die Anwendung verwendet Firebase Crashlytics zur automatischen Erfassung von Absturzberichten. Diese Berichte können Gerätestatus, App-Version und Stack-Traces zum Zeitpunkt eines Absturzes enthalten. Keine personenbezogenen Daten werden absichtlich in Absturzberichte aufgenommen. Diese Daten werden ausschließlich zur Identifikation und Behebung von Fehlern verwendet.</p>
+    </div>
+  </div>
 
-<h3>Crash Reporting</h3>
-<p>The Application uses Firebase Crashlytics to automatically collect crash reports. These reports may include device state, app version, and stack traces at the time of a crash. No personally identifiable information is intentionally included in crash reports. This data is used solely to identify and fix bugs.</p>
+  <!-- Data Retention -->
+  <div class="section">
+    <h2><span class="icon">🗄️</span><span data-lang="en">Data Retention</span><span data-lang="de">Datenspeicherung</span></h2>
+    <div data-lang="en">
+      <p>Data is retained while you use the Application and for up to 30 days after account deletion or app uninstallation, unless a longer retention period is required by law.</p>
+    </div>
+    <div data-lang="de">
+      <p>Daten werden für die Dauer der Nutzung der Anwendung und bis zu 30 Tage nach Kontolöschung oder Deinstallation der App aufbewahrt, sofern keine längere Aufbewahrungsdauer gesetzlich vorgeschrieben ist.</p>
+    </div>
+  </div>
 
-<h3>Data Retention</h3>
-<p>Data is retained while you use the Application and for up to 30 days after account deletion or app uninstallation, unless a longer retention period is required by law.</p>
+  <!-- Your Rights -->
+  <div class="section">
+    <h2><span class="icon">⚖️</span><span data-lang="en">Your Rights</span><span data-lang="de">Ihre Rechte</span></h2>
+    <div data-lang="en">
+      <p>You may request access, correction, or deletion of your data by contacting the Service Provider at the email below.</p>
+    </div>
+    <div data-lang="de">
+      <p>Sie können den Zugang, die Berichtigung oder die Löschung Ihrer Daten beantragen, indem Sie den Anbieter unter der unten angegebenen E-Mail-Adresse kontaktieren.</p>
+    </div>
+  </div>
 
-<h3>Your Rights</h3>
-<p>You may request access, correction, or deletion of your data by contacting the Service Provider at the email below.</p>
+  <!-- Security -->
+  <div class="section">
+    <h2><span class="icon">🔒</span><span data-lang="en">Security</span><span data-lang="de">Sicherheit</span></h2>
+    <div data-lang="en">
+      <p>Reasonable technical and organizational measures are taken to protect your data from unauthorized access, loss, or misuse.</p>
+    </div>
+    <div data-lang="de">
+      <p>Angemessene technische und organisatorische Maßnahmen werden ergriffen, um Ihre Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.</p>
+    </div>
+  </div>
 
-<h3>Security</h3>
-<p>Reasonable technical and organizational measures are taken to protect your data from unauthorized access, loss, or misuse.</p>
+  <!-- Children's Privacy -->
+  <div class="section">
+    <h2><span class="icon">👶</span><span data-lang="en">Children's Privacy</span><span data-lang="de">Datenschutz für Kinder</span></h2>
+    <div data-lang="en">
+      <p>The Application is not intended for children under the age of 13. The Service Provider does not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us and it will be deleted promptly.</p>
+    </div>
+    <div data-lang="de">
+      <p>Die Anwendung ist nicht für Kinder unter 13 Jahren bestimmt. Der Anbieter erhebt wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Falls Sie glauben, dass ein Kind personenbezogene Daten bereitgestellt hat, kontaktieren Sie uns bitte und diese werden umgehend gelöscht.</p>
+    </div>
+  </div>
 
-<h3>Children's Privacy</h3>
-<p>The Application is not intended for children under the age of 13. The Service Provider does not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us and it will be deleted promptly.</p>
+  <!-- Account Deletion -->
+  <div class="section">
+    <h2><span class="icon">🗑️</span><span data-lang="en">Account Deletion</span><span data-lang="de">Kontolöschung</span></h2>
+    <div data-lang="en">
+      <p>If you would like to delete your account and all associated data, please contact the Service Provider at:</p>
+      <a href="mailto:projects.madhavi@gmail.com" class="email-chip">✉️ projects.madhavi@gmail.com</a>
+      <p style="margin-top:14px;">Your request will be processed within a reasonable timeframe. All associated personal data will be deleted unless retention is required by law.</p>
+    </div>
+    <div data-lang="de">
+      <p>Wenn Sie Ihr Konto und alle zugehörigen Daten löschen möchten, wenden Sie sich bitte an den Anbieter unter:</p>
+      <a href="mailto:projects.madhavi@gmail.com" class="email-chip">✉️ projects.madhavi@gmail.com</a>
+      <p style="margin-top:14px;">Ihre Anfrage wird innerhalb einer angemessenen Frist bearbeitet. Alle zugehörigen personenbezogenen Daten werden gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht.</p>
+    </div>
+  </div>
 
-<h3>Account Deletion</h3>
-<p>If you would like to delete your account and all associated data, please contact the Service Provider at:</p>
-<p><strong>Email:</strong> projects.madhavi@gmail.com</p>
-<p>Your request will be processed within a reasonable timeframe. All associated personal data will be deleted unless retention is required by law.</p>
+  <!-- Changes -->
+  <div class="section">
+    <h2><span class="icon">📝</span><span data-lang="en">Changes to This Policy</span><span data-lang="de">Änderungen dieser Richtlinie</span></h2>
+    <div data-lang="en">
+      <p>This privacy policy may be updated from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the Application after changes constitutes acceptance of the updated policy.</p>
+    </div>
+    <div data-lang="de">
+      <p>Diese Datenschutzerklärung kann von Zeit zu Zeit aktualisiert werden. Änderungen werden auf dieser Seite mit einem aktualisierten Gültigkeitsdatum veröffentlicht. Die weitere Nutzung der Anwendung nach Änderungen gilt als Zustimmung zur aktualisierten Richtlinie.</p>
+    </div>
+  </div>
 
-<h3>Changes to This Policy</h3>
-<p>This privacy policy may be updated from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the Application after changes constitutes acceptance of the updated policy.</p>
+  <!-- Contact -->
+  <div class="section">
+    <h2><span class="icon">📬</span><span data-lang="en">Contact</span><span data-lang="de">Kontakt</span></h2>
+    <div data-lang="en">
+      <p>If you have any questions about this privacy policy, please contact:</p>
+      <a href="mailto:projects.madhavi@gmail.com" class="email-chip">✉️ projects.madhavi@gmail.com</a>
+    </div>
+    <div data-lang="de">
+      <p>Bei Fragen zu dieser Datenschutzerklärung wenden Sie sich bitte an:</p>
+      <a href="mailto:projects.madhavi@gmail.com" class="email-chip">✉️ projects.madhavi@gmail.com</a>
+    </div>
+  </div>
 
-<h3>Contact</h3>
-<p>If you have any questions about this privacy policy, please contact:<br>
-<strong>Email:</strong> projects.madhavi@gmail.com</p>
+</main>
+
+<footer>
+  © 2026 Madhavi Gullipalli · TReceipt Pro
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'en' ? 'english' : 'deutsch'));
+    });
+    document.documentElement.lang = lang;
+  }
+</script>
 
 </body>
 </html>
-
